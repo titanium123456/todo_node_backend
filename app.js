@@ -8,6 +8,9 @@ const PORT = process.env.PORT || 3000;
 
 //routes api
 app.use(express.json());
+app.get('/', function(req, res){
+  res.status(200).json({message: 'Welcome to isaac todo api'});
+});
 app.get('/todos', todoController.getAllTodos);
 app.post('/todos', todoController.addTodo);
 app.patch('/todos/:todoId', todoController.updateTodoById);
